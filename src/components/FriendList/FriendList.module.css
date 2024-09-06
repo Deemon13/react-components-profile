@@ -1,3 +1,22 @@
-.friendlist {
-	color: red;
+.friends {
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	list-style: none;
+	gap: 10px;
+	/* flex-wrap: wrap; */
+
+	background-color: transparent;
+}
+
+.friends__item {
+	border: 1px solid #000000;
+	padding: 10px;
+	border-radius: 5px;
+	flex-basis: calc((100% - 40px) / 5);
+
+	background-color: #ffffff;
+	color: #000000;
 }

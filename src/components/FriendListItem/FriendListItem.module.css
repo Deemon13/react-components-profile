@@ -1,0 +1,23 @@
+.friend__avatar {
+	margin: 0 auto 5px;
+}
+
+.friend__name {
+	margin: 0 0 5px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.friend__status {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.friend__status--online {
+	color: #00ff00;
+}
+
+.friend__status--offline {
+	color: #ff0000;
+}
