@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import styles from './Profile.module.css';
 
 export const Profile = props => {
@@ -36,4 +38,14 @@ export const Profile = props => {
 			</ul>
 		</div>
 	);
+};
+
+Profile.propTypes = {
+	props: PropTypes.exact({
+		username: PropTypes.string,
+		tag: PropTypes.string,
+		location: PropTypes.string,
+		avatar: PropTypes.string,
+		stats: PropTypes.objectOf(PropTypes.number),
+	}),
 };

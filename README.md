@@ -1,8 +1,56 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This template provides a minimal setup to get React working in Vite with HMR and some
+ESLint rules.
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+    uses [Babel](https://babeljs.io/) for Fast Refresh
+-   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses
+    [SWC](https://swc.rs/) for Fast Refresh
+
+Description of App
+
+Внутри общего контейнера - корневого компонента <App> рендерятся 4 компонента: Профиль
+социальной сети, Секция статистики, Список друзей, История транзакций.
+
+Для компонентов описаны propTypes.
+
+Стилизация выполнена CSS-modules.
+
+Профиль социальной сети - компонент <Profile>. Отображается информация о пользователе
+социальной сети. Данные о пользователе лежат в файле user.json. Компонент принимает объект
+props с информацией о пользователе:
+
+username — имя пользователя; tag — тег в социальной сети без @; location — город и страна;
+avatar — ссылка на изображение; stats — объект с информацией об активности.
+
+Секция статистики - компонент <Statistics>. Отображает статистику по переданным пропам.
+Например, загрузки в облако по типу файлов, посещение веб-страницы пользователями разных
+стран, финансовые траты и т. п. Данные о статистике лежат в файле data.json. Компонент
+принимает два пропа title и stats, в которых указывается заголовок и объект статистики.
+
+title - не обязателен, и если он не передан, не рендерится разметка заголовка <h2>;
+stats - массив объектов содержащих информацию о элементе статистики. Может иметь
+произвольное количество элементов.
+
+Список друзей - компонент <FriendList>. Отображает информацию о друзьях пользователя.
+Информация о друзьях хранится в файле friends.json. Состоит из проивольного количества
+компонентов <FriendListItem>. Компонент принимает один проп friends - массив объектов
+друзей, в составе которого обязательный проп id, использующийся в качестве key для
+коллекции компонентов <FriendListItem>.
+
+3.1. Карточка одного друга - компонент <FriendListItem>. Компонент принимает несколько
+пропсов:
+
+avatar - ссылка на аватар; name - имя друга; isOnline - буль сигнализирующий о состоянии
+друга, в сети или нет. В зависимости от пропа isOnline, меняется цвет текста статуса
+друга.
+
+История транзакций - компонент <TransactionHistory>. Принимает один проп items - массив
+объектов транзакций из transactions.json. Компонент создает разметку таблицы. Каждая
+транзакция это строка таблицы. Данные для списка доступны в файле transactions.json. Это
+массив объектов, каждый объект описывает одну транзакцию со следующими свойствами: id —
+уникальный идентификатор транзакции; type — тип транзакции; amount - сумма транзакции;
+currency - тип валюты.

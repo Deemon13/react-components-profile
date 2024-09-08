@@ -1,0 +1,11 @@
+.item__label {
+	margin: 0;
+	font-weight: 500;
+
+	color: #6d6c6c;
+}
+
+.item__perc {
+	margin: 0;
+	font-weight: 500;
+}
